@@ -1,6 +1,6 @@
 test:
   pre:
-    - sudo pip install -r  $HOME/$CIRCLE_PROJECT_REPONAME/yellow-submarine/requirements.txt
+    - sudo pip install -r  $HOME/$CIRCLE_PROJECT_REPONAME/sink-examples/requirements.txt
     - cd $HOME/$CIRCLE_PROJECT_REPONAME && ./build_base_image.sh
 
   override:
