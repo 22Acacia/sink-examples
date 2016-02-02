@@ -1,0 +1,8 @@
+[DEFAULT]
+num_retries=3
+batch_size=100
+proj_name=hx-test
+sub_name=default-subscription
+time_window=60
+log_level=DEBUG
+[override]

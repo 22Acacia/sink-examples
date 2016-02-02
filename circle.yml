@@ -1,0 +1,14 @@
+test:
+  pre:
+    - sudo pip install -r  $HOME/$CIRCLE_PROJECT_REPONAME/sink-examples/requirements.txt
+    - cd $HOME/$CIRCLE_PROJECT_REPONAME && ./build_base_image.sh
+
+  override:
+    - echo 'I promise, tests will occur!'
+
+deployment:
+  builddev:
+    branch: master
+    commands:
+      - cd $HOME/$CIRCLE_PROJECT_REPONAME && echo $GOOGLE_CREDENTIALS > account.json
+      - cd $HOME/$CIRCLE_PROJECT_REPONAME && ./build_and_push_docker_image.sh
