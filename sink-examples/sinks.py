@@ -78,7 +78,7 @@ class PubSubSubscription(object):
         credentials = GoogleCredentials.get_application_default()
         if credentials.create_scoped_required():
             credentials = credentials.create_scoped(PUBSUB_SCOPES)
-        http = httplib2.Http()
+        http = httplib2.Http(timeout=15)
         credentials.authorize(http=http)
         self.client = discovery.build('pubsub', 'v1', http=http)
 
